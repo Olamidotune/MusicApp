@@ -15,52 +15,52 @@ class Song {
     Song(
         title: 'Rockstar',
         description: 'Burna Boy',
-        url: 'https://music.apple.com/ng/album/rockstar/959277950?i=959277951',
+        url: 'assets/music/Bandana.mp3',
         coverUrl: 'https://bit.ly/3CXq1tS'),
     Song(
         title: 'Bandana',
         description: 'FireboyDML x Asake',
-        url: 'https://bit.ly/3wVhqUK',
+        url: 'assets/music/Bandana.mp3',
         coverUrl: 'https://bit.ly/3RAg6yG'),
     Song(
         title: 'Rockstar',
         description: 'Burna Boy',
-        url: 'https://music.apple.com/ng/album/rockstar/959277950?i=959277951',
+        url: 'assets/music/Bandana.mp3',
         coverUrl: 'https://bit.ly/3CXq1tS'),
     Song(
         title: 'Rockstar',
         description: 'Burna Boy',
-        url: 'https://music.apple.com/ng/album/rockstar/959277950?i=959277951',
+        url: 'assets/music/Bandana.mp3',
         coverUrl: 'https://bit.ly/3CXq1tS'),
     Song(
         title: 'Rockstar',
         description: 'Burna Boy',
-        url: 'https://music.apple.com/ng/album/rockstar/959277950?i=959277951',
+        url: 'assets/music/Bandana.mp3',
         coverUrl: 'https://bit.ly/3CXq1tS'),
     Song(
         title: 'Rockstar',
         description: 'Burna Boy',
-        url: 'https://music.apple.com/ng/album/rockstar/959277950?i=959277951',
+        url: 'assets/music/Bandana.mp3',
         coverUrl: 'https://bit.ly/3CXq1tS'),
     Song(
         title: 'Rockstar',
         description: 'Burna Boy',
-        url: 'https://music.apple.com/ng/album/rockstar/959277950?i=959277951',
+        url: 'assets/music/Bandana.mp3',
         coverUrl: 'https://bit.ly/3CXq1tS'),
     Song(
         title: 'Rockstar',
         description: 'Burna Boy',
-        url: 'https://music.apple.com/ng/album/rockstar/959277950?i=959277951',
+        url: 'assets/music/Bandana.mp3',
         coverUrl: 'https://bit.ly/3CXq1tS'),
     Song(
         title: 'Rockstar',
         description: 'Burna Boy',
-        url: 'https://music.apple.com/ng/album/rockstar/959277950?i=959277951',
+        url: 'assets/music/Bandana.mp3',
         coverUrl: 'https://bit.ly/3CXq1tS'),
     Song(
         title: 'Rockstar',
         description: 'Burna Boy',
-        url: 'https://music.apple.com/ng/album/rockstar/959277950?i=959277951',
+        url: 'assets/music/Bandana.mp3',
         coverUrl: 'https://bit.ly/3CXq1tS'),
   ];
 }

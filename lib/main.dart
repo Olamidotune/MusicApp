@@ -24,6 +24,7 @@ class MyApp extends StatelessWidget {
         title: 'Flutter Demo',
         home: const HomeScreen(),
         theme: ThemeData(
+          
           textTheme: Theme.of(context)
               .textTheme
               .apply(bodyColor: textColor, displayColor: textColor),
