@@ -1,10 +1,6 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:get/get_state_manager/get_state_manager.dart';
-import 'package:musicapp/config/colors.dart';
 
 class SeekBarData {
   final Duration position;
@@ -21,7 +17,7 @@ class SeekBar extends StatefulWidget {
 
   const SeekBar(
       {Key? key,
-      required this.position,
+      required this.position, 
       required this.duration,
       this.onChanged,
       this.onChangedEnd})
@@ -32,8 +28,6 @@ class SeekBar extends StatefulWidget {
 }
 
 class _SeekBarState extends State<SeekBar> {
-  double? _dragValue;
-
   String _formatDuration(Duration? duration) {
     if (duration == null) {
       return '--:--';
@@ -44,6 +38,8 @@ class _SeekBarState extends State<SeekBar> {
       return '$minutes:$seconds';
     }
   }
+
+  double? _dragValue;
 
   @override
   Widget build(BuildContext context) {

@@ -1,13 +1,12 @@
-import 'dart:ffi';
-import 'dart:math';
-
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:just_audio/just_audio.dart';
 import 'package:musicapp/models/playlist_model.dart';
 import 'package:musicapp/models/song_model.dart';
 import 'package:rxdart/rxdart.dart' as rxdart;
 
 import '../config/colors.dart';
+import '../widgets/player_buttons.dart';
 import '../widgets/seekbar.dart';
 
 class SongScreen extends StatefulWidget {
@@ -19,19 +18,22 @@ class SongScreen extends StatefulWidget {
 }
 
 class _SongScreenState extends State<SongScreen> {
-  AudioPlayer audioPlayer = AudioPlayer();
-  Playlist playlist = Playlist.playlist[0];
-  Song song = Song.songs[0];
-
   @override
   void initState() {
     super.initState();
 
-    audioPlayer.setAudioSource(ConcatenatingAudioSource(children: [
-      AudioSource.uri(
-        Uri.parse(song.url),
+    audioPlayer.setAudioSource(
+      ConcatenatingAudioSource(
+        children: [
+          AudioSource.uri(
+            Uri.parse('asset:///${song.url}'),
+          ),
+          AudioSource.uri(
+            Uri.parse('asset:///${Song.songs[1].url}'),
+          ),
+        ],
       ),
-    ]));
+    );
   }
 
   @override
@@ -46,6 +48,11 @@ class _SongScreenState extends State<SongScreen> {
           (Duration position, Duration? duration) {
         return SeekBarData(position, duration ?? Duration.zero);
       });
+
+  AudioPlayer audioPlayer = AudioPlayer();
+  // passing the song selected from the homeScreen to the songScreen.
+  //that is why an argunent is needed below.
+  Song song = Get.arguments ?? Song.songs[0];
 
   @override
   Widget build(BuildContext context) {
@@ -77,7 +84,10 @@ class _SongScreenState extends State<SongScreen> {
           ),
           const _BackgroundFliter(),
           _MusicPlayer(
-              seekBarDataStream: _seekBarDataStream, audioPlayer: audioPlayer),
+            seekBarDataStream: _seekBarDataStream,
+            audioPlayer: audioPlayer,
+            song: song,
+          ),
         ],
       ),
     );
@@ -85,10 +95,12 @@ class _SongScreenState extends State<SongScreen> {
 }
 
 class _MusicPlayer extends StatelessWidget {
+  final Song song;
   const _MusicPlayer({
     Key? key,
     required Stream<SeekBarData> seekBarDataStream,
     required this.audioPlayer,
+    required this.song,
   })  : _seekBarDataStream = seekBarDataStream,
         super(key: key);
 
@@ -101,6 +113,8 @@ class _MusicPlayer extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 40),
       child: Column(
         children: [
+          Text(song.title),
+          Text(song.description),
           StreamBuilder<SeekBarData>(
             stream: _seekBarDataStream,
             builder: (context, snapshot) {
@@ -115,77 +129,6 @@ class _MusicPlayer extends StatelessWidget {
           PlayerButton(audioPlayer: audioPlayer),
         ],
       ),
-    );
-  }
-}
-
-class PlayerButton extends StatelessWidget {
-  const PlayerButton({
-    Key? key,
-    required this.audioPlayer,
-  }) : super(key: key);
-
-  final AudioPlayer audioPlayer;
-
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      children: [
-        StreamBuilder(
-          stream: audioPlayer.playerStateStream,
-          builder: (context, snapshot) {
-             if (snapshot.hasData) {
-
-              final playerState = snapshot.data;
-              final processingState =
-                  (playerState! as PlayerState).processingState;
-
-                if (processingState == ProcessingState.loading ||
-                  processingState == ProcessingState.loading) {
-                return Container(
-                  height: 64,
-                  width: 64,
-                  margin: const EdgeInsets.all(8),
-                  child: CircularProgressIndicator(),
-                );
-              }   //if audioPlayer is not player
-            else if (!audioPlayer.playing) {
-              return IconButton(
-                onPressed: audioPlayer.play,
-                icon: const Icon(
-                  Icons.play_circle,
-                  color: Colors.white,
-                ),
-                iconSize: 75,
-              );
-            }    
-          else if (processingState != ProcessingState.completed) {
-              return IconButton(
-                onPressed: audioPlayer.pause,
-                icon: const Icon(
-                  Icons.pause_circle,
-                  color: Colors.white,
-                ),
-                iconSize: 75,
-              );
-            }       
-        else {
-              return IconButton(
-                onPressed: () => audioPlayer.seek(Duration.zero,
-                    index: audioPlayer.effectiveIndices!.first),
-                icon: const Icon(
-                  Icons.replay_circle_filled,
-                  color: Colors.white,
-                ),
-                iconSize: 75,
-              );
-            }
-             } else {
-              return const CircularProgressIndicator();
-            }
-          }),
-        
-      ],
     );
   }
 }
@@ -229,8 +172,3 @@ class _BackgroundFliter extends StatelessWidget {
     );
   }
 }
-
-
-
-
-

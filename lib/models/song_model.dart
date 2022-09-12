@@ -13,54 +13,54 @@ class Song {
 
   static List<Song> songs = [
     Song(
+        title: 'Hello',
+        description: 'Adele',
+        url: 'assets/music/Hello.mp3',
+        coverUrl: 'https://bit.ly/3CXq1tS'),
+   Song(
+        title: 'Hello',
+        description: 'Adele',
+        url: 'assets/music/Hello.mp3',
+        coverUrl: 'https://bit.ly/3CXq1tS'),
+  Song(
         title: 'Rockstar',
         description: 'Burna Boy',
-        url: 'assets/music/Bandana.mp3',
+        url: 'assets/music/Hello.mp3',
         coverUrl: 'https://bit.ly/3CXq1tS'),
-    Song(
-        title: 'Bandana',
-        description: 'FireboyDML x Asake',
-        url: 'assets/music/Bandana.mp3',
-        coverUrl: 'https://bit.ly/3RAg6yG'),
-    Song(
+  Song(
         title: 'Rockstar',
         description: 'Burna Boy',
-        url: 'assets/music/Bandana.mp3',
+        url: 'assets/music/Hello.mp3',
         coverUrl: 'https://bit.ly/3CXq1tS'),
-    Song(
-        title: 'Rockstar',
-        description: 'Burna Boy',
-        url: 'assets/music/Bandana.mp3',
-        coverUrl: 'https://bit.ly/3CXq1tS'),
-    Song(
-        title: 'Rockstar',
-        description: 'Burna Boy',
-        url: 'assets/music/Bandana.mp3',
-        coverUrl: 'https://bit.ly/3CXq1tS'),
-    Song(
-        title: 'Rockstar',
-        description: 'Burna Boy',
-        url: 'assets/music/Bandana.mp3',
-        coverUrl: 'https://bit.ly/3CXq1tS'),
-    Song(
-        title: 'Rockstar',
-        description: 'Burna Boy',
-        url: 'assets/music/Bandana.mp3',
-        coverUrl: 'https://bit.ly/3CXq1tS'),
-    Song(
-        title: 'Rockstar',
-        description: 'Burna Boy',
-        url: 'assets/music/Bandana.mp3',
-        coverUrl: 'https://bit.ly/3CXq1tS'),
-    Song(
-        title: 'Rockstar',
-        description: 'Burna Boy',
-        url: 'assets/music/Bandana.mp3',
-        coverUrl: 'https://bit.ly/3CXq1tS'),
-    Song(
-        title: 'Rockstar',
-        description: 'Burna Boy',
-        url: 'assets/music/Bandana.mp3',
-        coverUrl: 'https://bit.ly/3CXq1tS'),
+    // Song(
+    //     title: 'Rockstar',
+    //     description: 'Burna Boy',
+    //     url: 'assets/music/Bandana.mp3',
+    //     coverUrl: 'https://bit.ly/3CXq1tS'),
+    // Song(
+    //     title: 'Rockstar',
+    //     description: 'Burna Boy',
+    //     url: 'assets/music/Bandana.mp3',
+    //     coverUrl: 'https://bit.ly/3CXq1tS'),
+    // Song(
+    //     title: 'Rockstar',
+    //     description: 'Burna Boy',
+    //     url: 'assets/music/Bandana.mp3',
+    //     coverUrl: 'https://bit.ly/3CXq1tS'),
+    // Song(
+    //     title: 'Rockstar',
+    //     description: 'Burna Boy',
+    //     url: 'assets/music/Bandana.mp3',
+    //     coverUrl: 'https://bit.ly/3CXq1tS'),
+    // Song(
+    //     title: 'Rockstar',
+    //     description: 'Burna Boy',
+    //     url: 'assets/music/Bandana.mp3',
+    //     coverUrl: 'https://bit.ly/3CXq1tS'),
+    // Song(
+    //     title: 'Rockstar',
+    //     description: 'Burna Boy',
+    //     url: 'assets/music/Bandana.mp3',
+    //     coverUrl: 'https://bit.ly/3CXq1tS'),
   ];
 }
